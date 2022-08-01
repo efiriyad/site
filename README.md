@@ -1,4 +1,4 @@
-# [Site][website] &middot; [![GitHub license]](./LICENSE) ![Test Action] ![Netlify Deploy]
+# [Site][website] &middot; [![GitHub license]](./LICENSE) ![Test Action]
 
 <!-- Table of Contents -->
 
@@ -59,5 +59,4 @@ Distributed under the MIT License. See [LICENSE](./LICENSE) for more information
 <!-- Shields.io links -->
 
 [github license]: https://img.shields.io/badge/license-MIT-blue.svg
-[netlify deploy]: https://img.shields.io/netlify/your-project-id-here
 [test action]: https://github.com/efiriyad/site/actions/workflows/test.yaml/badge.svg

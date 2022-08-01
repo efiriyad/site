@@ -36,7 +36,7 @@ jobs:
         run: yarn --frozen-lockfile --prefer-offline
 
       - name: Build the project
-        run: yarn build
+        run: yarn generate
 
       - name: Zip the project's bundle
         uses: papeloto/action-zip@v1

@@ -8,4 +8,7 @@ export default defineNuxtConfig({
 
   colorMode: { classSuffix: "" },
   tailwindcss: { cssPath: "~/assets/css/main.scss" },
+
+  ssr: false,
+  target: "static",
 });
