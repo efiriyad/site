@@ -5,7 +5,7 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "analyze": "nuxt analyze",
-    "preview": "nuxt preview",
+    "preview": "npx serve .output/public",
     "test:unit": "vitest",
     "test:unit:ci": "vitest run",
     "test:e2e": "start-server-and-test preview http://127.0.0.1:3000/ 'cypress open'",
