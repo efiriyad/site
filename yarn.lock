@@ -4698,6 +4698,11 @@ kolorist@^1.5.1:
   resolved "https://registry.yarnpkg.com/kolorist/-/kolorist-1.5.1.tgz#c3d66dc4fabde4f6b7faa6efda84c00491f9e52b"
   integrity sha512-lxpCM3HTvquGxKGzHeknB/sUjuVoUElLlfYnXZT73K8geR9jQbroGlSCFBax9/0mpGoD3kzcMLnOlGQPJJNyqQ==
 
+konsta@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/konsta/-/konsta-0.11.0.tgz#e967b9574d654b45f11d9190d6e39e74a2cbc1f1"
+  integrity sha512-BgMu2ZQ7BvYKDXEXFqbdgMbKcCxG1qeiEx9eZoe4irb5FhbggqmNZtn57kq1nKgE8kTkmAydr3HMDGynug0P8w==
+
 lazy-ass@1.6.0, lazy-ass@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/lazy-ass/-/lazy-ass-1.6.0.tgz#7999655e8646c17f089fdd187d150d3324d54513"
