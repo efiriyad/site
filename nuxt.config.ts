@@ -4,11 +4,21 @@ import { defineNuxtConfig } from "nuxt";
 export default defineNuxtConfig({
   srcDir: "src/",
   buildModules: ["@pinia/nuxt", "@vueuse/nuxt"],
-  modules: ["@nuxtjs/color-mode", "@nuxtjs/tailwindcss"],
+  modules: [
+    "@kevinmarrec/nuxt-pwa",
+    "@nuxtjs/color-mode",
+    "@nuxtjs/tailwindcss",
+  ],
 
   colorMode: { classSuffix: "" },
   tailwindcss: { cssPath: "~/assets/css/main.scss" },
 
   ssr: false,
   target: "static",
+
+  pwa: {
+    workbox: {
+      enabled: true,
+    },
+  },
 });
