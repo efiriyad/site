@@ -14,12 +14,13 @@ export default defineNuxtConfig({
   colorMode: { classSuffix: "" },
   tailwindcss: { cssPath: "~/assets/css/main.scss" },
 
-  ssr: false,
-  target: "static",
-
   pwa: {
-    workbox: {
-      enabled: true,
+    manifest: {
+      name: "Efiriyad",
+      short_name: "Efir",
+      start_url: "/mobile/",
     },
+    meta: { theme_color: "#fff" },
+    workbox: { enabled: true },
   },
 });

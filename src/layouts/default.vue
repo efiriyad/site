@@ -1,12 +1,7 @@
-<script setup lang="ts">
-useHead({
-  titleTemplate: "%s",
-  htmlAttrs: { lang: "en" },
-});
-</script>
-
 <template>
   <div class="min-h-screen bg-transparent">
-    <slot />
+    <div class="text-2xl text-black">
+      <slot />
+    </div>
   </div>
 </template>

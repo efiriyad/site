@@ -1,13 +1,3 @@
-<script lang="ts">
-import { kPage } from "konsta/vue";
-
-export default {
-  components: {
-    kPage,
-  },
-};
-</script>
-
 <script setup lang="ts">
 useHead({
   title: "Home",
@@ -15,9 +5,7 @@ useHead({
 </script>
 
 <template>
-  <NuxtLayout name="mobile">
-    <k-page>
-      <Home />
-    </k-page>
-  </NuxtLayout>
+  <div class="flex items-center justify-center">
+    <p>Hello World</p>
+  </div>
 </template>

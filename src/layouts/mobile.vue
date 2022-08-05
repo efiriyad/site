@@ -8,13 +8,6 @@ export default {
 };
 </script>
 
-<script setup lang="ts">
-useHead({
-  titleTemplate: "%s",
-  htmlAttrs: { lang: "en" },
-});
-</script>
-
 <template>
   <k-app theme="ios">
     <slot />
