@@ -12,7 +12,14 @@ module.exports = konstaConfig({
     "./src/app.{js,ts,vue}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      },
+      maxWidth: {
+        "8xl": "90rem",
+      },
+    },
   },
   plugins: [],
 });

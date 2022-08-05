@@ -23,4 +23,14 @@ export default defineNuxtConfig({
     meta: { theme_color: "#fff" },
     workbox: { enabled: true },
   },
+
+  runtimeConfig: {
+    public: {
+      github: {
+        owner: "efiriyad",
+        repo: "site",
+        release: "v0.1.0",
+      },
+    },
+  },
 });
