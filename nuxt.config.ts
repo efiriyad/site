@@ -3,7 +3,7 @@ import { defineNuxtConfig } from "nuxt";
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   srcDir: "src/",
-  build: { transpile: ["konsta"] },
+  build: { transpile: ["konsta", "@heroicons/vue"] },
   buildModules: ["@pinia/nuxt", "@vueuse/nuxt"],
   modules: [
     "@kevinmarrec/nuxt-pwa",
