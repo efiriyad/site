@@ -54,7 +54,7 @@ const navigation = [
           </transition>
         </Menu>
       </div>
-      <a :href="`https://github.com/${github.owner}/${github.repo}`">
+      <a target="_blank" :href="`https://github.com/${github.owner}/${github.repo}`">
         <div class="flex items-center gap-2 font-semibold hover:text-primary">
           <div>{{ github.release }}</div>
           <div class="h-6 w-6">
