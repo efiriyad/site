@@ -15,6 +15,9 @@ export default defineNuxtConfig({
   tailwindcss: { cssPath: "~/assets/css/main.scss" },
 
   pwa: {
+    icon: {
+      fileName: "android-chrome-512x512.png",
+    },
     manifest: {
       name: "Efiriyad",
       short_name: "Efir",
