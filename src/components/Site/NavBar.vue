@@ -6,16 +6,18 @@ const config = useRuntimeConfig();
 const github = config.public.github;
 
 const navigation = [
-  { name: "Demo", icon: DeviceMobileIcon, href: "/mobile", current: true },
-  { name: "Support", icon: SupportIcon, href: "#", current: false },
+  { name: "Demo", icon: DeviceMobileIcon, href: "/mobile" },
+  { name: "Support", icon: SupportIcon, href: "/support" },
 ];
 </script>
 
 <template>
-  <nav class="sticky top-0 z-50 w-full border-b-[0.5px] bg-white/75 shadow-sm backdrop-blur-md backdrop-saturate-200">
+  <nav class="sticky top-0 z-50 w-full border-b-[0.5px] bg-white/75 shadow-sm backdrop-blur-lg backdrop-saturate-200">
     <div class="mx-auto flex h-16 max-w-8xl items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-10">
       <div class="flex items-center gap-4">
-        <img alt="Logo" src="/images/logo.png" height="48" width="29" />
+        <NuxtLink to="/">
+          <IconEfiriyad height="42" width="42" />
+        </NuxtLink>
         <div class="hidden gap-4 sm:flex">
           <div v-for="nav in navigation" :key="nav" class="hover:text-primary">
             <NuxtLink :to="nav.href">{{ nav.name }}</NuxtLink>
@@ -46,7 +48,7 @@ const navigation = [
                     :class="active ? 'bg-primary text-white' : 'text-gray-900'"
                   >
                     <component :is="nav.icon" class="mr-2 h-5 w-5" aria-hidden="true" />
-                    {{ nav.name }}
+                    <div class="mt-0.5">{{ nav.name }}</div>
                   </NuxtLink>
                 </MenuItem>
               </div>
@@ -56,9 +58,9 @@ const navigation = [
       </div>
       <a target="_blank" :href="`https://github.com/${github.owner}/${github.repo}`">
         <div class="flex items-center gap-2 font-semibold hover:text-primary">
-          <div>{{ github.release }}</div>
+          <div>{{ github.release.tag }}</div>
           <div class="h-6 w-6">
-            <IconGithub></IconGithub>
+            <IconGithub />
           </div>
         </div>
       </a>
