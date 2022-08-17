@@ -89,7 +89,7 @@ useHead({
       <template #content>
         <div class="flex items-center gap-16 sm:gap-32">
           <div class="flex flex-col items-end gap-3">
-            <div class="-mr-0.5px h-24 w-24 md:h-32 md:w-32">
+            <div class="-mr-1 h-24 w-24 md:h-32 md:w-32">
               <nuxt-img src="/images/logos/pronote.png" width="128" height="128" />
             </div>
             <FeaturesBox :right="0" class="mr-14 hidden h-[416px] w-[550px] xl:flex" />
