@@ -15,8 +15,8 @@ const navigation = [
   <nav class="sticky top-0 z-50 w-full border-b-[0.5px] bg-white/75 shadow-sm backdrop-blur-lg backdrop-saturate-200">
     <div class="mx-auto flex h-16 max-w-8xl items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-10">
       <div class="flex items-center gap-4">
-        <NuxtLink to="/">
-          <IconEfiriyad height="42" width="42" />
+        <NuxtLink to="/" aria-label="home">
+          <nuxt-img src="/images/logos/efiriyad/full.svg" alt="Logo full" height="42" width="42" />
         </NuxtLink>
         <div class="hidden gap-4 sm:flex">
           <div v-for="nav in navigation" :key="nav" class="hover:text-primary">
@@ -25,7 +25,7 @@ const navigation = [
         </div>
         <Menu as="div" class="relative block sm:hidden">
           <div class="h-6 w-6">
-            <MenuButton class="h-full w-full">
+            <MenuButton aria-label="menu" class="h-full w-full">
               <MenuIcon />
             </MenuButton>
           </div>

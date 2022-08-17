@@ -28,10 +28,10 @@ useHead({
         <div class="shrink-0">
           <div class="relative mx-auto flex h-40 w-40 items-center justify-center md:h-56 md:w-56 lg:ml-auto lg:mr-0">
             <div class="h-14 w-14 md:h-18 md:w-18">
-              <IconEfiriyad part="text" />
+              <nuxt-img src="/images/logos/efiriyad/text.svg" alt="Logo text" height="72" width="72" />
             </div>
             <div class="animation-logo absolute mx-auto h-40 w-40 md:h-56 md:w-56 lg:ml-auto lg:mr-0">
-              <IconEfiriyad part="outer" />
+              <nuxt-img src="/images/logos/efiriyad/outer.svg" alt="Logo outer" height="224" width="224" />
             </div>
           </div>
         </div>
@@ -90,13 +90,13 @@ useHead({
         <div class="flex items-center gap-16 sm:gap-32">
           <div class="flex flex-col items-end gap-3">
             <div class="-mr-1 h-24 w-24 md:h-32 md:w-32">
-              <nuxt-img src="/images/logos/pronote.png" width="128" height="128" />
+              <nuxt-img src="/images/logos/pronote.png" alt="Pronote" height="128" width="128" />
             </div>
             <FeaturesBox :right="0" class="mr-14 hidden h-[416px] w-[550px] xl:flex" />
           </div>
           <div class="flex flex-col items-start gap-3">
             <div class="h-24 w-24 md:h-32 md:w-32">
-              <nuxt-img src="/images/logos/skolengo.png" width="128" height="128" />
+              <nuxt-img src="/images/logos/skolengo.png" alt="Pronote" height="128" width="128" />
             </div>
             <FeaturesBox class="ml-14 hidden h-[416px] w-[550px] xl:flex" />
           </div>

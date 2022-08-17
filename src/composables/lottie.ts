@@ -1,4 +1,4 @@
-import lottie from "lottie-web";
+import lottie from "lottie-web/build/player/lottie_light.min";
 
 export const loadLottie = (container, file) => {
   // Lottie config instance
