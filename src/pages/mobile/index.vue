@@ -1,13 +1,3 @@
-<script lang="ts">
-import { kPage } from "konsta/vue";
-
-export default {
-  components: {
-    kPage,
-  },
-};
-</script>
-
 <script setup lang="ts">
 definePageMeta({
   layout: "mobile",
@@ -19,7 +9,5 @@ useHead({
 </script>
 
 <template>
-  <k-page>
-    <Home />
-  </k-page>
+  <MobileHome />
 </template>
