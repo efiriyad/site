@@ -7,9 +7,14 @@ export default defineNuxtConfig({
   buildModules: ["@pinia/nuxt", "@vueuse/nuxt"],
   modules: [
     "@kevinmarrec/nuxt-pwa",
+    "@nuxt/image-edge",
     "@nuxtjs/color-mode",
     "@nuxtjs/tailwindcss",
   ],
+
+  image: {
+    cloudimage: { token: "ayarjnqkqr" },
+  },
 
   colorMode: { classSuffix: "" },
   tailwindcss: { cssPath: "~/assets/css/main.scss" },
@@ -32,7 +37,10 @@ export default defineNuxtConfig({
       github: {
         owner: "efiriyad",
         repo: "site",
-        release: "v0.1.0",
+        release: {
+          tag: "v0.1.0",
+          date: "August 5, 2022",
+        },
       },
     },
   },

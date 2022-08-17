@@ -20,6 +20,7 @@
     "@headlessui/vue": "^1.6.7",
     "@heroicons/vue": "^1.0.6",
     "@kevinmarrec/nuxt-pwa": "^0.4.2",
+    "@nuxt/image-edge": "^1.0.0-27657146.da85542",
     "@nuxt/test-utils-edge": "^3.0.0-rc.2-27525415.a8d42d5",
     "@nuxtjs/color-mode": "^3.1.4",
     "@nuxtjs/eslint-config-typescript": "^10.0.0",
@@ -49,7 +50,16 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.3.1",
+    "animejs": "^3.2.1",
+    "lottie-web": "^5.9.6",
     "pinia": "^2.0.17"
+  },
+  "resolutions": {
+    "nuxt": "3.0.0-rc.6",
+    "nuxi": "3.0.0-rc.6",
+    "@nuxt/vite-builder": "3.0.0-rc.6",
+    "@nuxt/kit": "3.0.0-rc.6",
+    "@nuxt/schema": "3.0.0-rc.6"
   },
   "lint-staged": {
     "**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts,html}": [
