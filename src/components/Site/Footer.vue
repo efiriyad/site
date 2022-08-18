@@ -10,7 +10,7 @@ const socialMedias = [
 
 <template>
   <div class="border-t-[0.5px] border-black border-opacity-10 py-8">
-    <div class="mx-auto flex max-w-8xl flex-col items-center justify-between gap-4 px-8 md:flex-row">
+    <div class="mx-auto flex max-w-8xl flex-col items-center justify-between gap-4 px-4 sm:px-8 md:flex-row">
       <div class="text-gray-500">© 2022 Efiriyad, Inc. All rights reserved</div>
       <div class="flex gap-4 text-gray-500 md:gap-6 lg:gap-8">
         <div v-for="social in socialMedias" :key="social" class="odd:hover:text-primary even:hover:text-secondary">
