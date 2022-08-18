@@ -16,7 +16,13 @@ const navigation = [
     <div class="mx-auto flex h-16 max-w-8xl items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-10">
       <div class="flex items-center gap-4">
         <NuxtLink to="/" aria-label="home">
-          <nuxt-img src="/images/logos/efiriyad/full.svg" alt="Logo full" height="42" width="42" />
+          <nuxt-img
+            provider="cloudimage"
+            src="/images/logos/efiriyad/full.svg"
+            alt="Logo full"
+            height="42"
+            width="42"
+          />
         </NuxtLink>
         <div class="hidden gap-4 sm:flex">
           <div v-for="nav in navigation" :key="nav" class="hover:text-primary">
