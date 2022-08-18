@@ -90,13 +90,13 @@ useHead({
         <div class="flex items-center gap-16 sm:gap-32">
           <div class="flex flex-col items-end gap-3">
             <div class="-mr-1 h-24 w-24 md:h-32 md:w-32">
-              <nuxt-img src="/logos/pronote.png" alt="Pronote" height="128" width="128" />
+              <nuxt-img loading="lazy" src="/logos/pronote.png" alt="Pronote" height="128" width="128" />
             </div>
             <FeaturesBox :right="0" class="mr-14 hidden h-[416px] w-[550px] xl:flex" />
           </div>
           <div class="flex flex-col items-start gap-3">
             <div class="h-24 w-24 md:h-32 md:w-32">
-              <nuxt-img src="/logos/skolengo.png" alt="Skolengo" height="128" width="128" />
+              <nuxt-img loading="lazy" src="/logos/skolengo.png" alt="Skolengo" height="128" width="128" />
             </div>
             <FeaturesBox class="ml-14 hidden h-[416px] w-[550px] xl:flex" />
           </div>
