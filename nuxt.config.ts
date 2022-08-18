@@ -43,7 +43,7 @@ export default defineNuxtConfig({
         owner: "efiriyad",
         repo: "site",
         release: {
-          tag: "v0.1.0",
+          tag: "v0.1.1",
           date: "August 5, 2022",
         },
       },
