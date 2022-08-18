@@ -13,7 +13,12 @@ export default defineNuxtConfig({
   ],
 
   image: {
-    cloudimage: { token: "ayarjnqkqr" },
+    dir: "public/images",
+    provider: process.env.NODE_ENV === "production" ? "cloudimage" : "ipx",
+    cloudimage: {
+      cdnURL: "https://ayarjnqkqr.cloudimg.io/",
+      baseURL: "_images",
+    },
   },
 
   colorMode: { classSuffix: "" },
