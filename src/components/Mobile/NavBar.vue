@@ -1,5 +1,5 @@
 <template>
-  <k-navbar title="Efiriyad PWA" />
+  <k-navbar title="Efiriyad app" />
 </template>
 
 <script lang="ts">
