@@ -1,3 +1,11 @@
+<script lang="ts">
+import { localeMixin } from "~/composables/mixins/locale";
+
+export default {
+  mixins: [localeMixin],
+};
+</script>
+
 <template>
   <div class="min-h-screen bg-zinc-50">
     <Head>

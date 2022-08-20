@@ -1,11 +1,13 @@
 <script lang="ts">
 import { kApp, kPage } from "konsta/vue";
+import { localeMixin } from "~/composables/mixins/locale";
 
 export default {
   components: {
     kApp,
     kPage,
   },
+  mixins: [localeMixin],
 };
 </script>
 
@@ -23,7 +25,9 @@ export default {
     </Head>
 
     <k-page>
+      <MobileNavBar />
       <slot />
+      <MobileTabBar />
     </k-page>
   </k-app>
 </template>
