@@ -13,9 +13,6 @@ onMounted(() => {
 
 useHead({
   title: "Home",
-  htmlAttrs: {
-    class: "scroll-smooth",
-  },
 });
 </script>
 
