@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     "@nuxt/image-edge",
     "@nuxtjs/color-mode",
     "@nuxtjs/tailwindcss",
+    "@intlify/nuxt3",
   ],
 
   image: {
@@ -21,8 +22,15 @@ export default defineNuxtConfig({
     },
   },
 
-  colorMode: { classSuffix: "" },
+  colorMode: { classSuffix: "", storageKey: "theme" },
   tailwindcss: { cssPath: "~/assets/css/main.scss" },
+
+  intlify: {
+    localeDir: "locales",
+    vueI18n: {
+      locale: "en",
+    },
+  },
 
   pwa: {
     icon: {

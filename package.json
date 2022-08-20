@@ -19,6 +19,7 @@
     "@cypress/vue": "^4.0.0",
     "@headlessui/vue": "^1.6.7",
     "@heroicons/vue": "^1.0.6",
+    "@intlify/nuxt3": "^0.2.3",
     "@kevinmarrec/nuxt-pwa": "^0.4.2",
     "@nuxt/image-edge": "^1.0.0-27657146.da85542",
     "@nuxt/test-utils-edge": "^3.0.0-rc.2-27525415.a8d42d5",
@@ -52,7 +53,8 @@
     "@pinia/nuxt": "^0.3.1",
     "animejs": "^3.2.1",
     "lottie-web": "^5.9.6",
-    "pinia": "^2.0.17"
+    "pinia": "^2.0.17",
+    "pinia-plugin-persistedstate": "^2.1.1"
   },
   "resolutions": {
     "nuxt": "3.0.0-rc.6",
