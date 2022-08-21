@@ -1,6 +1,7 @@
 <script lang="ts">
 import { kBlockTitle, kList, kListInput, kBlock, kButton } from "konsta/vue";
-import { TranslateIcon, MoonIcon } from "@heroicons/vue/outline";
+import { TranslateIcon, MoonIcon, SunIcon } from "@heroicons/vue/outline";
+import { speChoices } from "~/composables/constants";
 
 import { useAccountStore } from "~/stores/account";
 import { useLocaleStore } from "~/stores/client/locale";
@@ -8,12 +9,18 @@ import { useLocaleStore } from "~/stores/client/locale";
 export default {
   components: {
     MoonIcon,
+    SunIcon,
     TranslateIcon,
     kBlock,
     kBlockTitle,
     kButton,
     kList,
     kListInput,
+  },
+  data() {
+    return {
+      speChoices,
+    };
   },
 };
 </script>
@@ -33,30 +40,6 @@ const select = reactive({
   lvc: account.lvc,
   specialties: account.specialities,
 });
-
-// TODO: Move this to another file.
-const choices = {
-  lvb: [
-    { label: "None", value: "" },
-    { label: "Arabic", value: "arabic" },
-    { label: "German", value: "german" },
-    { label: "Spanish", value: "spanish" },
-  ],
-  lvc: [
-    { label: "None", value: "" },
-    { label: "Sport OP", value: "sport-op" },
-    { label: "Art", value: "art" },
-  ],
-  specialties: [
-    { label: "Mathematics", value: "math" },
-    { label: "Physics", value: "physics" },
-    { label: "SVT", value: "svt" },
-    { label: "SES", value: "ses" },
-    { label: "English", value: "english" },
-    { label: "HGGSP", value: "hggsp" },
-    { label: "HLP", value: "hlp" },
-  ],
-};
 
 // Page main element used to hide the settings until the options has been loaded.
 const settingsEl = ref(null);
@@ -94,7 +77,12 @@ onMounted(() => {
       </k-list-input>
       <k-list-input ref="themeSelect" type="select" dropdown @change="(e) => ($colorMode.preference = e.target.value)">
         <template #media>
-          <MoonIcon class="h-5 w-5" />
+          <div v-if="$colorMode.value === 'light'">
+            <SunIcon class="h-5 w-5" />
+          </div>
+          <div v-if="$colorMode.value === 'dark'">
+            <MoonIcon class="h-5 w-5" />
+          </div>
         </template>
         <option value="system">System</option>
         <option value="light">Light</option>
@@ -105,12 +93,12 @@ onMounted(() => {
     <k-block-title>Languages</k-block-title>
     <k-list inset :hairlines="true">
       <k-list-input ref="lvbSelect" label="LVB" type="select" dropdown @change="(e) => (select.lvb = e.target.value)">
-        <option v-for="choice in choices.lvb" :key="choice" :value="choice.value">
+        <option v-for="choice in speChoices.lvb" :key="choice" :value="choice.value">
           {{ choice.label }}
         </option>
       </k-list-input>
       <k-list-input ref="lvcSelect" label="LVC" type="select" dropdown @change="(e) => (select.lvc = e.target.value)">
-        <option v-for="choice in choices.lvc" :key="choice" :value="choice.value">
+        <option v-for="choice in speChoices.lvc" :key="choice" :value="choice.value">
           {{ choice.label }}
         </option>
       </k-list-input>
