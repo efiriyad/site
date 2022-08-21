@@ -39,7 +39,6 @@ export default defineNuxtConfig({
     manifest: {
       name: "Efiriyad",
       start_url: "/mobile/",
-      background_color: "#ff0000",
     },
     workbox: { enabled: true },
   },
