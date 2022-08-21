@@ -2,5 +2,34 @@
   "locale": {
     "en": "English",
     "fr": "French"
+  },
+  "theme": {
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "lessons": {
+    "none": "None",
+    "arabic": "Arabic",
+    "german": "German",
+    "spanish": "Spanish",
+    "sport_op": "Sport OP",
+    "art": "Art",
+    "math": "Mathematics",
+    "physics": "Physics",
+    "svt": "SVT",
+    "ses": "SES",
+    "english": "English",
+    "hggsp": "HGGSP",
+    "hlp": "HLP"
+  },
+  "settings": {
+    "general": "General",
+    "languages": "Languages",
+  },
+  "tabbar": {
+    "home": "Home",
+    "features": "Features",
+    "settings": "Settings"
   }
 }

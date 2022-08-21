@@ -67,7 +67,7 @@ onMounted(() => {
 
 <template>
   <div ref="settingsEl" class="hidden">
-    <k-block-title>General</k-block-title>
+    <k-block-title>{{ $t("settings.general") }}</k-block-title>
     <k-list inset :hairlines="true">
       <k-list-input ref="localeSelect" type="select" dropdown @change="(e) => locale.updateLang(e.target.value)">
         <template #media>
@@ -84,22 +84,22 @@ onMounted(() => {
             <MoonIcon class="h-5 w-5" />
           </div>
         </template>
-        <option value="system">System</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
+        <option value="system">{{ $t("theme.system") }}</option>
+        <option value="light">{{ $t("theme.light") }}</option>
+        <option value="dark">{{ $t("theme.dark") }}</option>
       </k-list-input>
     </k-list>
 
-    <k-block-title>Languages</k-block-title>
+    <k-block-title>{{ $t("settings.languages") }}</k-block-title>
     <k-list inset :hairlines="true">
       <k-list-input ref="lvbSelect" label="LVB" type="select" dropdown @change="(e) => (select.lvb = e.target.value)">
         <option v-for="choice in speChoices.lvb" :key="choice" :value="choice.value">
-          {{ choice.label }}
+          {{ $t(choice.label) }}
         </option>
       </k-list-input>
       <k-list-input ref="lvcSelect" label="LVC" type="select" dropdown @change="(e) => (select.lvc = e.target.value)">
         <option v-for="choice in speChoices.lvc" :key="choice" :value="choice.value">
-          {{ choice.label }}
+          {{ $t(choice.label) }}
         </option>
       </k-list-input>
     </k-list>

@@ -18,17 +18,17 @@ export default {
 const tabs = [
   {
     icon: BeakerIcon,
-    label: "Features",
+    label: "tabbar.features",
     href: "/mobile/features",
   },
   {
     icon: HomeIcon,
-    label: "Home",
+    label: "tabbar.home",
     href: "/mobile/home",
   },
   {
     icon: AdjustmentsIcon,
-    label: "Settings",
+    label: "tabbar.settings",
     href: "/mobile/settings",
   },
 ];
@@ -42,7 +42,7 @@ const tabs = [
       :to="tab.href"
       class="relative inline-flex h-full w-full cursor-pointer select-none items-center justify-center space-x-1"
     >
-      <k-tabbar-link component="div" :active="$route.path.startsWith(tab.href)" :label="tab.label">
+      <k-tabbar-link component="div" :active="$route.path.startsWith(tab.href)" :label="$t(tab.label)">
         <template #icon>
           <k-icon>
             <component :is="tab.icon" class="h-6 w-6" :aria-label="tab.label" />

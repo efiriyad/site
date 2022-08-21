@@ -2,5 +2,34 @@
   "locale": {
     "en": "Anglais",
     "fr": "Français"
+  },
+  "theme": {
+    "system": "Système",
+    "light": "Clair",
+    "dark": "Foncé"
+  },
+  "lessons": {
+    "none": "Aucun",
+    "arabic": "Arabe",
+    "german": "Allemand",
+    "spanish": "Espagnol",
+    "sport-op": "Sport OP",
+    "art": "Art",
+    "math": "Mathématique",
+    "physics": "Physique-Chimie",
+    "svt": "SVT",
+    "ses": "SES",
+    "english": "Anglais",
+    "hggsp": "HGGSP",
+    "hlp": "HLP"
+  },
+  "settings": {
+    "general": "Général",
+    "languages": "Langues",
+  },
+  "tabbar": {
+    "home": "Accueil",
+    "features": "Fonctions",
+    "settings": "Paramètres",
   }
 }
