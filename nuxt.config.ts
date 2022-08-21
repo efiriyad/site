@@ -38,8 +38,8 @@ export default defineNuxtConfig({
     },
     manifest: {
       name: "Efiriyad",
-      short_name: "Efir",
       start_url: "/mobile/",
+      background_color: "#ff0000",
     },
     workbox: { enabled: true },
   },
