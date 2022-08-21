@@ -13,7 +13,7 @@
     "arabic": "Arabe",
     "german": "Allemand",
     "spanish": "Espagnol",
-    "sport-op": "Sport OP",
+    "sport_op": "Sport OP",
     "art": "Art",
     "math": "Mathématique",
     "physics": "Physique-Chimie",
@@ -25,7 +25,12 @@
   },
   "settings": {
     "general": "Général",
-    "languages": "Langues"
+    "appearance": "Apparence",
+    "lessons": "Sélection des cours",
+    "specialties": "Spécialités",
+    "languages": "Langues",
+    "options": "Options",
+    "save": "Save"
   },
   "tabbar": {
     "home": "Accueil",

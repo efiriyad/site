@@ -25,7 +25,12 @@
   },
   "settings": {
     "general": "General",
-    "languages": "Languages"
+    "appearance": "Appearance",
+    "lessons": "Lessons selection",
+    "specialties": "Specialities",
+    "languages": "Languages",
+    "options": "Options",
+    "save": "Save"
   },
   "tabbar": {
     "home": "Home",
