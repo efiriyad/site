@@ -37,22 +37,22 @@ useHead({
             Efir<span class="hidden lg:inline">iyad</span> <span class="text-secondary">app</span>
           </div>
           <div class="my-8 text-3xl font-bold text-black sm:text-4xl sm:leading-snug">
-            Revolutionary school tracking app for Efiriyad students
+            {{ $t("home.description") }}
           </div>
           <div class="my-8 text-xl font-semibold text-gray-500 lg:text-2xl lg:leading-normal">
-            With iOS & Android offline app support
+            {{ $t("home.subtitle") }}
           </div>
           <div class="my-8 flex flex-col items-center justify-center space-x-4 sm:flex-row lg:justify-end">
             <NuxtLink
               to="/mobile"
               class="flex h-12 cursor-pointer select-none items-center rounded-full bg-primary px-8 text-xl font-bold text-white duration-200 hover:bg-primary-light active:bg-primary-dark active:ring-4 active:ring-primary active:ring-opacity-50 lg:px-6 xl:px-8"
             >
-              Get started
+              {{ $t("home.button") }}
             </NuxtLink>
             <div
               class="hidden h-12 items-center rounded-xl border border-secondary bg-secondary bg-opacity-10 px-4 font-mono text-lg text-black sm:flex"
             >
-              <span class="pt-1">Find support</span
+              <span class="pt-1">{{ $t("home.link") }}</span
               ><span
                 class="ml-3 transform-gpu cursor-pointer select-none opacity-50 duration-200 hover:text-secondary hover:opacity-100"
               >
@@ -63,9 +63,9 @@ useHead({
             </div>
           </div>
           <div class="mt-4 hidden font-light text-gray-500 sm:block">
-            MIT Licensed, {{ github.release.tag }} released on {{ github.release.date }}
+            {{ $t("home.version", { version: github.release.tag, date: github.release.date[$i18n.locale] }) }}
           </div>
-          <div class="mt-1 hidden font-light text-gray-500 md:block">© 2022 Efiriyad, Inc. All rights reserved</div>
+          <div class="mt-1 hidden font-light text-gray-500 md:block">{{ $t("home.copyright") }}</div>
         </div>
       </div>
       <div class="ml-16 hidden lg:block">
@@ -78,11 +78,10 @@ useHead({
       </div>
     </section>
     <SiteSection>
-      <template #title> All in <span class="text-secondary">one</span> place </template>
-      <template #description>
-        Efiriyad app comes with all the features of Pronote and Skolengo combined. You will find everything you need to
-        lead a successfully school year, all in one app.
+      <template #title>
+        <p v-html="$t('features.title')" />
       </template>
+      <template #description>{{ $t("features.description") }}</template>
       <template #content>
         <div class="flex items-center gap-16 sm:gap-32">
           <div class="flex flex-col items-end gap-3">
@@ -101,11 +100,8 @@ useHead({
       </template>
     </SiteSection>
     <SiteSection>
-      <template #title> Realtime notifications </template>
-      <template #description>
-        Efiriyad app is built to support realtime notifications. We will notify you when a new activity appears, such as
-        a new grade or a new homework.
-      </template>
+      <template #title>{{ $t("notifications.title") }}</template>
+      <template #description>{{ $t("notifications.description") }}</template>
       <template #content>
         <div ref="notificationShowdown" class="relative mt-6 flex">
           <LottieNotifications />

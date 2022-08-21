@@ -25,11 +25,31 @@
   },
   "settings": {
     "general": "Général",
-    "languages": "Langues",
+    "languages": "Langues"
   },
   "tabbar": {
     "home": "Accueil",
     "features": "Fonctions",
-    "settings": "Paramètres",
+    "settings": "Paramètres"
+  },
+  "navbar": {
+    "demo": "Démo",
+    "support": "Support"
+  },
+  "home": {
+    "description": "Application de suivi scolaire pour les élèves de l'Efiriyad",
+    "subtitle": "Avec support offline pour iOS et Android",
+    "button": "Commencer",
+    "link": "Obtenir de l'aide",
+    "version": "License MIT, {version} publié le {date}",
+    "copyright": "© Efiriyad, Inc. Tous droits réservés"
+  },
+  "features": {
+    "title": "Tout dans une app",
+    "description": "L'application Efiriyad est composée de toutes les fonctions de Pronote et Skolengo combinées. Vous trouverez tout ce que vous avez besoin pour gérer un cycle scolaire efficacement."
+  },
+  "notifications": {
+    "title": "Notifications en temps réel",
+    "description": "L'application Efiriyad est conçue pour supporter les notifications en temps réel. Nous vous informerons quand une nouvelle activité apparaît, comme par exemple une nouvelle note ou un nouveau devoir."
   }
 }

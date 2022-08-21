@@ -50,7 +50,7 @@ export default defineNuxtConfig({
         repo: "site",
         release: {
           tag: "v0.1.1",
-          date: "August 5, 2022",
+          date: { en: "August 5, 2022", fr: "5 Août, 2022" },
         },
       },
     },

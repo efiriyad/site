@@ -6,8 +6,8 @@ const config = useRuntimeConfig();
 const github = config.public.github;
 
 const navigation = [
-  { name: "Demo", icon: DeviceMobileIcon, href: "/mobile" },
-  { name: "Support", icon: SupportIcon, href: "/support" },
+  { name: "navbar.demo", icon: DeviceMobileIcon, href: "/mobile" },
+  { name: "navbar.support", icon: SupportIcon, href: "/support" },
 ];
 </script>
 
@@ -20,7 +20,7 @@ const navigation = [
         </NuxtLink>
         <div class="hidden gap-4 sm:flex">
           <div v-for="nav in navigation" :key="nav" class="hover:text-primary">
-            <NuxtLink :to="nav.href">{{ nav.name }}</NuxtLink>
+            <NuxtLink :to="nav.href">{{ $t(nav.name) }}</NuxtLink>
           </div>
         </div>
         <Menu as="div" class="relative block sm:hidden">
@@ -48,7 +48,7 @@ const navigation = [
                     :class="active ? 'bg-primary text-white' : 'text-gray-900'"
                   >
                     <component :is="nav.icon" class="mr-2 h-5 w-5" aria-hidden="true" />
-                    <div class="mt-0.5">{{ nav.name }}</div>
+                    <div class="mt-0.5">{{ $t(nav.name) }}</div>
                   </NuxtLink>
                 </MenuItem>
               </div>
