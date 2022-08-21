@@ -41,7 +41,6 @@ export default defineNuxtConfig({
       short_name: "Efir",
       start_url: "/mobile/",
     },
-    meta: { theme_color: "#fff" },
     workbox: { enabled: true },
   },
 

@@ -1,6 +1,7 @@
 <script lang="ts">
 import { kApp, kPage } from "konsta/vue";
 import { localeMixin } from "~/composables/mixins/locale";
+import { themeColors } from "~/composables/constants";
 
 export default {
   components: {
@@ -8,6 +9,11 @@ export default {
     kPage,
   },
   mixins: [localeMixin],
+  data() {
+    return {
+      themeColors,
+    };
+  },
 };
 </script>
 
@@ -21,7 +27,7 @@ export default {
       <Link rel="manifest" href="/site.webmanifest" />
       <Link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2563eb" />
       <Meta name="msapplication-TileColor" content="#2563eb" />
-      <Meta name="theme-color" content="#ffffff" />
+      <Meta name="theme-color" :content="themeColors[$colorMode.value]" />
     </Head>
 
     <k-page>
