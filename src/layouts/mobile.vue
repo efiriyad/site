@@ -19,6 +19,8 @@ export default {
 
 <template>
   <k-app theme="ios">
+    <Html :lang="$i18n.locale" />
+
     <Head>
       <Title>Mobile</Title>
       <Link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

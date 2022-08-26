@@ -9,10 +9,25 @@ export const localeMixin = {
   },
   watch: {
     "locale.lang": function (newLang) {
-      this.$i18n.locale = newLang;
+      // Change the page lang to apply the changes.
+      let route = this.$route.path;
+
+      switch (newLang) {
+        case "en":
+          route = route.replace("/fr", "");
+          break;
+        case "fr":
+          route = "/fr" + route;
+          break;
+      }
+
+      return navigateTo(route);
+    },
+    "$route.params.lang": function (newLang) {
+      this.$i18n.locale = newLang || "en";
     },
   },
   created() {
-    this.$i18n.locale = this.locale.lang;
+    this.$i18n.locale = this.$route.params.lang || "en";
   },
 };

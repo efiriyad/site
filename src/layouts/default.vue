@@ -14,6 +14,8 @@ export default {
 
 <template>
   <div class="min-h-screen bg-zinc-50">
+    <Html :lang="$i18n.locale" />
+
     <Head>
       <Title>Default</Title>
       <Link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
