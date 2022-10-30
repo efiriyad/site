@@ -1,29 +1,40 @@
-import { defineNuxtConfig } from "nuxt";
-
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   srcDir: "src/",
-  build: { transpile: ["konsta", "@heroicons/vue"] },
+  build: { transpile: ["@heroicons/vue", "konsta"] },
   buildModules: ["@pinia/nuxt", "@vueuse/nuxt"],
-  modules: [
-    "@kevinmarrec/nuxt-pwa",
-    "@nuxt/image-edge",
-    "@nuxtjs/color-mode",
-    "@nuxtjs/tailwindcss",
-    "@intlify/nuxt3",
-  ],
+  modules: ["@intlify/nuxt3", "@nuxt/image-edge", "@nuxtjs/color-mode", "@nuxtjs/tailwindcss"],
 
-  image: {
-    dir: "public/images",
-    provider: process.env.NODE_ENV === "production" ? "cloudimage" : "ipx",
-    cloudimage: {
-      cdnURL: "https://ayarjnqkqr.cloudimg.io/",
-      baseURL: "_images",
+  app: {
+    head: {
+      title: "Efiriyad app",
+      link: [
+        { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+        { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
+        { rel: "icon", type: "image/png", sizes: "64x64", href: "/favicon-16x16.png" },
+        { rel: "manifest", href: "/site.webmanifest" },
+        { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#2563eb" },
+      ],
+      meta: [
+        { name: "msapplication-TileColor", content: "#2563eb" },
+        { name: "theme-color", content: "#f7f7f8" },
+      ],
+      script: [{ children: "if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js') }" }],
     },
   },
 
   colorMode: { classSuffix: "", storageKey: "theme" },
   tailwindcss: { cssPath: "~/assets/css/main.scss" },
+
+  image: {
+    dir: "public/images",
+    provider: process.env.NODE_ENV === "production" ? "imgix" : "ipx",
+
+    // Using imgix settings for our custom cdn.
+    imgix: {
+      baseURL: "https://cdn.efiriyad.tech/images",
+    },
+  },
 
   intlify: {
     localeDir: "locales",
@@ -32,19 +43,24 @@ export default defineNuxtConfig({
     },
   },
 
-  pwa: {
-    icon: {
-      fileName: "android-chrome-512x512.png",
-    },
-    manifest: {
-      name: "Efiriyad",
-      start_url: "/mobile/",
-    },
-    workbox: { enabled: true },
-  },
-
   runtimeConfig: {
     public: {
+      // Required config.
+      apiBase: "https://api.efiriyad.tech/v1",
+      firebase: {
+        config: {
+          apiKey: "AIzaSyASQrwJjpT0zHkwzu33sU7FBCA5y81b2Y4",
+          authDomain: "efiriyad.firebaseapp.com",
+          projectId: "efiriyad",
+          storageBucket: "efiriyad.appspot.com",
+          messagingSenderId: "799528008421",
+          appId: "1:799528008421:web:385b7dab9e9b502f97f20c",
+          measurementId: "G-8SH5VPT952",
+        },
+        vapidKey: "BNIF-8UEQVZ1kCJhoC-GCvL3917D-21OC9J59VA-PYbAxjTS24D8On9tvTMSbkMpkqqNI1lTA7iZ96ml45ncWX0",
+      },
+
+      // Less important config.
       github: {
         owner: "efiriyad",
         repo: "site",
