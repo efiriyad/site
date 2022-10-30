@@ -26,6 +26,18 @@
   "settings": {
     "general": "Général",
     "appearance": "Apparence",
+    "profile": "Profile",
+    "notifications": {
+      "title": "Notifications",
+      "email": {
+        "title": "Email",
+        "description": "Activer les push notification et recevoir des nouvelles en 1 seconde"
+      },
+      "push": {
+        "title": "Push",
+        "description": "Activer les push notification et recevoir des nouvelles en 1 seconde"
+      }
+    },
     "lessons": "Sélection des cours",
     "specialties": "Spécialités",
     "languages": "Langues",
@@ -33,9 +45,12 @@
     "save": "Save"
   },
   "tabbar": {
+    "efiriyad": "Efiriyad",
     "home": "Accueil",
     "features": "Fonctions",
-    "settings": "Paramètres"
+    "settings": "Paramètres",
+    "profile": "Profile",
+    "classes": "Classes"
   },
   "navbar": {
     "demo": "Démo",

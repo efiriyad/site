@@ -26,6 +26,18 @@
   "settings": {
     "general": "General",
     "appearance": "Appearance",
+    "profile": "Profile",
+    "notifications": {
+      "title": "Notifications",
+      "email": {
+        "title": "Email",
+        "description": "Enable push notification and get realtime updates in no time"
+      },
+      "push": {
+        "title": "Push",
+        "description": "Enable push notification and get realtime updates in no time"
+      }
+    },
     "lessons": "Lessons selection",
     "specialties": "Specialities",
     "languages": "Languages",
@@ -33,9 +45,12 @@
     "save": "Save"
   },
   "tabbar": {
+    "efiriyad": "Efiriyad",
     "home": "Home",
     "features": "Features",
-    "settings": "Settings"
+    "settings": "Settings",
+    "profile": "Profile",
+    "classes": "Classes"
   },
   "navbar": {
     "demo": "Demo",
