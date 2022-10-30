@@ -4,7 +4,7 @@ import { loadLottie } from "~/composables/lottie";
 const animationContainer = ref(null);
 
 onMounted(() => {
-  loadLottie(animationContainer.value, "notifications");
+  loadLottie(animationContainer.value, "rocket");
 });
 </script>
 
