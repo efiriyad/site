@@ -6,3 +6,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+// Make icons thicker for better accessibility.
+@layer base {
+  svg {
+    stroke-width: 2;
+  }
+}
