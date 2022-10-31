@@ -57,11 +57,7 @@ const data = await account.fetchData();
 </script>
 
 <template>
-  <k-navbar
-    :title="title ? $t(`tabbar.${title}`) : 'efiriyad'"
-    :subtitle="subtitle ? $t(`tabbar.${subtitle}`) : ''"
-    class="sticky top-0"
-  >
+  <k-navbar :title="title ? $t(`tabbar.${title}`) : 'efiriyad'" :subtitle="subtitle ? $t(`tabbar.${subtitle}`) : ''">
     <template #right>
       <NuxtLink to="/mobile/settings/profile" class="mr-2 h-7 w-7 overflow-hidden rounded-full">
         <img v-if="data" height="28" width="28" :src="data.profile.picture" alt="Profile" />

@@ -52,7 +52,7 @@ onMounted(() => {
 
 <template>
   <div class="h-full w-full">
-    <div class="flex h-[45%] flex-col items-center justify-center gap-8 px-12 pt-8">
+    <div class="flex h-2/5 flex-col items-center justify-center gap-8 px-12 pt-8">
       <div class="flex h-40 w-40 items-center justify-center">
         <div class="h-14 w-14">
           <nuxt-img src="/logos/efiriyad/text.svg" alt="Logo text" height="72" width="72" />
@@ -66,8 +66,8 @@ onMounted(() => {
         <div class="text-4xl">Efiriyad app</div>
       </div>
     </div>
-    <div class="h-[55%] p-4">
-      <swiper class="h-5/6" :modules="modules" :pagination="{ clickable: true }" :space-between="50" @swiper="onSwiper">
+    <div class="h-3/5 p-4">
+      <swiper class="h-4/6" :modules="modules" :pagination="{ clickable: true }" :space-between="50" @swiper="onSwiper">
         <swiper-slide><div class="h-5/6 rounded-md border-4 bg-primary shadow-md" /></swiper-slide>
         <swiper-slide><div class="h-5/6 rounded-md border-4 bg-secondary shadow-md" /></swiper-slide>
         <swiper-slide><div class="h-5/6 rounded-md border-4 bg-primary shadow-md" /></swiper-slide>

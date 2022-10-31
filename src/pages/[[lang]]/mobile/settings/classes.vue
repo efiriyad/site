@@ -1,12 +1,11 @@
 <!--suppress JSUnusedGlobalSymbols, JSValidateTypes -->
 <script lang="ts">
-import { kBlockTitle, kBlock, kList, kListInput } from "konsta/vue";
+import { kBlockTitle, kList, kListInput } from "konsta/vue";
 import { studentChoices } from "~/composables/constants";
 
 export default {
   components: {
     kBlockTitle,
-    kBlock,
     kList,
     kListInput,
   },
@@ -98,8 +97,6 @@ const select = reactive({
           </option>
         </k-list-input>
       </k-list>
-
-      <k-block><div class="h-4" /></k-block>
 
       <!--    <k-block-->
       <!--      v-if="select.options.lvb !== account.options.lvb || select.options.lvc !== account.options.lvc"-->
