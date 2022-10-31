@@ -1,15 +1,16 @@
+<!--suppress JSValidateTypes, JSUnusedGlobalSymbols -->
 <script lang="ts">
 import { kTabbar, kTabbarLink, kIcon } from "konsta/vue";
-import { BeakerIcon, HomeIcon, AdjustmentsIcon } from "@heroicons/vue/outline";
+import { AdjustmentsHorizontalIcon, BeakerIcon, HomeIcon } from "@heroicons/vue/24/outline";
 
 export default {
   components: {
     kTabbar,
     kTabbarLink,
     kIcon,
+    AdjustmentsHorizontalIcon,
     BeakerIcon,
     HomeIcon,
-    AdjustmentsIcon,
   },
   methods: {
     isActive(href) {
@@ -33,24 +34,46 @@ const tabs = [
     href: "/mobile/home",
   },
   {
-    icon: AdjustmentsIcon,
+    icon: AdjustmentsHorizontalIcon,
     label: "tabbar.settings",
     href: "/mobile/settings",
   },
 ];
+
+defineProps({
+  notification: {
+    type: String,
+    default: "",
+  },
+  href: {
+    type: Boolean,
+    default: true,
+  },
+});
 </script>
 
 <template>
-  <k-tabbar :labels="true" class="fixed left-0 bottom-0">
+  <k-tabbar :labels="true">
     <NuxtLink
       v-for="tab in tabs"
       :key="tab"
-      :to="tab.href"
+      :to="href ? tab.href : ''"
       class="relative inline-flex h-full w-full cursor-pointer select-none items-center justify-center space-x-1"
     >
-      <k-tabbar-link component="div" :active="isActive(tab.href)" :label="$t(tab.label)">
+      <k-tabbar-link
+        component="div"
+        :active="href ? isActive(tab.href) : tab.label === 'tabbar.home'"
+        :label="$t(tab.label)"
+      >
         <template #icon>
-          <k-icon>
+          <k-icon
+            v-if="tab.href === '/mobile/home' && notification"
+            :badge="notification"
+            :badge-colors="{ bg: 'bg-secondary dark:bg-secondary-dark mt-0.5' }"
+          >
+            <component :is="tab.icon" class="h-6 w-6" :aria-label="tab.label" />
+          </k-icon>
+          <k-icon v-else>
             <component :is="tab.icon" class="h-6 w-6" :aria-label="tab.label" />
           </k-icon>
         </template>
