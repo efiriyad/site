@@ -2,12 +2,14 @@
 <script lang="ts">
 import { localeMixin } from "~/composables/mixins/locale";
 import { themeColors } from "~/composables/constants";
+import { useAccountStore } from "~/stores/account";
 
 export default {
   mixins: [localeMixin],
   data() {
     return {
       themeColors,
+      useAccountStore,
     };
   },
 };
@@ -18,6 +20,13 @@ const { vueApp } = useNuxtApp();
 
 const colorMode = useColorMode();
 const i18n = vueApp.config.globalProperties.$i18n;
+
+// Prefetch account data.
+const account = useAccountStore();
+
+if (account.token) {
+  await account.fetchData();
+}
 
 useHead({
   title: "Default",

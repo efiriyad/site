@@ -44,6 +44,7 @@ onMounted(() => {
   if (!account.token) {
     setTimeout(async () => {
       await account.generateToken();
+      await account.fetchData();
     });
   }
 });
