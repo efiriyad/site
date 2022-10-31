@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
-import { DeviceMobileIcon, MenuIcon, SupportIcon } from "@heroicons/vue/outline";
+import { DevicePhoneMobileIcon, Bars3Icon, LifebuoyIcon } from "@heroicons/vue/24/outline";
 
 const config = useRuntimeConfig();
 const github = config.public.github;
 
 const navigation = [
-  { name: "navbar.demo", icon: DeviceMobileIcon, href: "/mobile" },
-  { name: "navbar.support", icon: SupportIcon, href: "/support" },
+  { name: "navbar.demo", icon: DevicePhoneMobileIcon, href: "/mobile" },
+  { name: "navbar.support", icon: LifebuoyIcon, href: "/support" },
 ];
 </script>
 
@@ -26,7 +26,7 @@ const navigation = [
         <Menu as="div" class="relative block sm:hidden">
           <div class="h-6 w-6">
             <MenuButton aria-label="menu" class="h-full w-full">
-              <MenuIcon />
+              <Bars3Icon />
             </MenuButton>
           </div>
           <transition
