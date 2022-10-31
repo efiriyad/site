@@ -116,9 +116,7 @@ onMounted(() => {
       <template #description>{{ $t("notifications.description") }}</template>
       <template #content>
         <div ref="notificationShowdown" class="relative mt-6 flex">
-          <div class="-mx-24 -my-4 w-[320px] md:w-[520px]">
-            <LottieNotifications />
-          </div>
+          <div class="-mx-24 -my-4 w-[320px] md:w-[520px]"></div>
         </div>
       </template>
     </SiteSection>
