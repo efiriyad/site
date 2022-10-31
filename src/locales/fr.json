@@ -31,11 +31,12 @@
       "title": "Notifications",
       "email": {
         "title": "Email",
-        "description": "Activer les push notification et recevoir des nouvelles en 1 seconde"
+        "description": "Les e-mails sont la forme de communication la plus courante. Ils fonctionnent sur n'importe quel appareil, que ce soit votre téléphone, votre ordinateur ou même votre montre."
       },
       "push": {
         "title": "Push",
-        "description": "Activer les push notification et recevoir des nouvelles en 1 seconde"
+        "subtitle": "Activer les notifications push",
+        "description": "Les notifications push vous permettent de rester à jour. Malheureusement, elles ne fonctionnent pas sur les téléphones IOS. (Prévu en 2023)"
       }
     },
     "lessons": "Sélection des cours",

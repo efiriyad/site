@@ -1,31 +1,60 @@
 // This store manages the user's server settings that are required for the application to function.
 // We use pinia-plugin-persistedstate to persist the store to localStorage.
-import { defineStore } from "pinia";
+// noinspection JSUnusedGlobalSymbols
 
-export const useAccountStore = defineStore("account", {
+import { defineStore, StateTree } from "pinia";
+
+export const useAccountStore = defineStore("token", {
   state: () => {
     return {
-      languages: { lva: "english_lva", lvb: "arabic_lvb" },
-      options: { op1: "", op2: "" },
-      specialties: { sp1: "math", sp2: "physics", sp3: "svt" },
+      token: "",
     };
   },
 
   actions: {
-    updateLanguages(languages) {
-      this.languages.lva = languages.lva;
-      this.languages.lvb = languages.lvb;
+    async generateToken() {
+      const { data: client } = await useServerFetch("/client", {
+        key: "client-token",
+        method: "POST",
+      });
+
+      // @ts-ignore
+      this.token = client.value.token;
     },
-    updateOptions(options) {
-      this.options.op1 = options.op1;
-      this.options.op2 = options.op2;
+
+    async fetchData() {
+      const { data: client } = await useServerFetch("/client", {
+        key: "client-data",
+        method: "GET",
+        params: { token: this.token },
+      });
+
+      return client.value;
     },
-    updateSpecialties(specialties) {
-      this.specialties.sp1 = specialties.sp1;
-      this.specialties.sp2 = specialties.sp2;
-      this.specialties.sp3 = specialties.sp3;
+
+    async updateData(body) {
+      await useServerFetch("/client", {
+        method: "PUT",
+        params: { token: this.token },
+        initialCache: false,
+        body,
+      });
     },
   },
 
-  persist: true,
+  persist: {
+    serializer: {
+      serialize: (value: StateTree) => value.token,
+      deserialize: (value: string) => {
+        const account = useAccountStore();
+        account.token = value;
+
+        return account.$state;
+      },
+    },
+  },
 });
+
+// languages: { lva: "english_lva", lvb: "arabic_lvb" },
+// options: { op1: "", op2: "" },
+// specialties: { sp1: "math", sp2: "physics", sp3: "svt" },

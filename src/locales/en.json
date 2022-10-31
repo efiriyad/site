@@ -31,11 +31,12 @@
       "title": "Notifications",
       "email": {
         "title": "Email",
-        "description": "Enable push notification and get realtime updates in no time"
+        "description": "Emails are the most common form of communication. They work on any device, be it your phone, your computer or even your watch."
       },
       "push": {
         "title": "Push",
-        "description": "Enable push notification and get realtime updates in no time"
+        "subtitle": "Enable push notifications",
+        "description": "Push notifications enable us to keep you up to date with everything that is happening. Sadly, push notifications do not work on IOS phones. (expected in 2023)"
       }
     },
     "lessons": "Lessons selection",
