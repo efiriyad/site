@@ -1,18 +1,33 @@
 <script setup lang="ts">
-import { ExternalLinkIcon } from "@heroicons/vue/outline";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/vue/24/outline";
 import { SiteSection } from "#components";
 
 import { animate as animateLogo } from "~/composables/animations/logo";
+import { animate as animateFeaturesBox } from "~/composables/animations/featuresBox";
+
+useHead({ title: "Home" });
+definePageMeta({ layout: "site" });
 
 const config = useRuntimeConfig();
 const github = config.public.github;
 
-onMounted(() => {
-  animateLogo();
-});
+const featuresBox = ref(null);
 
-useHead({
-  title: "Home",
+onMounted(() => {
+  // Animate the logo when the page is mounted.
+  animateLogo();
+
+  // Animate the features box when it appears on screen.
+  const { stop } = useIntersectionObserver(
+    featuresBox.value,
+    ([{ isIntersecting }]) => {
+      if (isIntersecting) {
+        animateFeaturesBox();
+        stop();
+      }
+    },
+    { threshold: 0.5 }
+  );
 });
 </script>
 
@@ -44,7 +59,7 @@ useHead({
           </div>
           <div class="my-8 flex flex-col items-center justify-center space-x-4 sm:flex-row lg:justify-end">
             <NuxtLink
-              to="/mobile"
+              to="/mobile/home"
               class="flex h-12 cursor-pointer select-none items-center rounded-full bg-primary px-8 text-xl font-bold text-white duration-200 hover:bg-primary-light active:bg-primary-dark active:ring-4 active:ring-primary active:ring-opacity-50 lg:px-6 xl:px-8"
             >
               {{ $t("home.button") }}
@@ -57,7 +72,7 @@ useHead({
                 class="ml-3 transform-gpu cursor-pointer select-none opacity-50 duration-200 hover:text-secondary hover:opacity-100"
               >
                 <a href="/support" target="_blank">
-                  <ExternalLinkIcon class="h-4.5 w-4.5" />
+                  <ArrowTopRightOnSquareIcon class="h-4.5 w-4.5" />
                 </a>
               </span>
             </div>
@@ -70,14 +85,11 @@ useHead({
       </div>
       <div class="ml-16 hidden lg:block">
         <Phone>
-          <NuxtLayout name="demo">
-            <div class="h-8 w-full bg-bars-ios-light"></div>
-            <MobileDemo />
-          </NuxtLayout>
+          <MobileDemo />
         </Phone>
       </div>
     </section>
-    <SiteSection>
+    <SiteSection ref="featuresBox">
       <template #title>
         <p v-html="$t('features.title')" />
       </template>
@@ -88,13 +100,13 @@ useHead({
             <div class="-mr-1 h-24 w-24 md:h-32 md:w-32">
               <nuxt-img loading="lazy" src="/logos/pronote.png" alt="Pronote" height="128" width="128" />
             </div>
-            <FeaturesBox :right="0" class="mr-14 hidden h-[416px] w-[550px] xl:flex" />
+            <SiteFeaturesBox :right="0" class="mr-14 hidden h-[416px] w-[550px] xl:flex" />
           </div>
           <div class="flex flex-col items-start gap-3">
             <div class="h-24 w-24 md:h-32 md:w-32">
               <nuxt-img loading="lazy" src="/logos/skolengo.png" alt="Skolengo" height="128" width="128" />
             </div>
-            <FeaturesBox class="ml-14 hidden h-[416px] w-[550px] xl:flex" />
+            <SiteFeaturesBox class="ml-14 hidden h-[416px] w-[550px] xl:flex" />
           </div>
         </div>
       </template>
@@ -104,7 +116,9 @@ useHead({
       <template #description>{{ $t("notifications.description") }}</template>
       <template #content>
         <div ref="notificationShowdown" class="relative mt-6 flex">
-          <LottieNotifications />
+          <div class="-mx-24 -my-4 w-[320px] md:w-[520px]">
+            <LottieNotifications />
+          </div>
         </div>
       </template>
     </SiteSection>
