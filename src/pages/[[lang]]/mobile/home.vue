@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({ layout: "mobile" });
-useHead({ title: "Settings - Profile" });
+useHead({ title: "Home" });
 </script>
 
 <template>
