@@ -27,6 +27,9 @@
     "general": "General",
     "appearance": "Appearance",
     "profile": "Profile",
+    "classes": {
+      "warning": "For now, you cannot edit these configurations as they are not yet implemented. This feature is under development."
+    },
     "notifications": {
       "title": "Notifications",
       "email": {

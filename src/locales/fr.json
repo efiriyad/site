@@ -27,6 +27,9 @@
     "general": "Général",
     "appearance": "Apparence",
     "profile": "Profile",
+    "classes": {
+      "warning": "Pour l'instant, vous ne pouvez pas modifier ces configurations car elles ne sont pas encore implémentées."
+    },
     "notifications": {
       "title": "Notifications",
       "email": {

@@ -1,10 +1,11 @@
 <!--suppress JSUnusedGlobalSymbols, JSValidateTypes -->
 <script lang="ts">
-import { kBlockTitle, kList, kListInput } from "konsta/vue";
+import { kBlock, kBlockTitle, kList, kListInput } from "konsta/vue";
 import { studentChoices } from "~/composables/constants";
 
 export default {
   components: {
+    kBlock,
     kBlockTitle,
     kList,
     kListInput,
@@ -40,6 +41,7 @@ const select = reactive({
           :label="`SP${i}`"
           type="select"
           dropdown
+          disabled
           @change="(e) => (select.specialties[`sp${i}`] = e.target.value)"
         >
           <option
@@ -55,7 +57,13 @@ const select = reactive({
 
       <k-block-title>{{ $t("settings.languages") }}</k-block-title>
       <k-list inset>
-        <k-list-input label="LVA" type="select" dropdown @change="(e) => (select.languages.lva = e.target.value)">
+        <k-list-input
+          label="LVA"
+          type="select"
+          dropdown
+          disabled
+          @change="(e) => (select.languages.lva = e.target.value)"
+        >
           <option
             v-for="choice in studentChoices.languages.lva"
             :key="choice"
@@ -65,7 +73,13 @@ const select = reactive({
             {{ $t(choice.label) }}
           </option>
         </k-list-input>
-        <k-list-input label="LVB" type="select" dropdown @change="(e) => (select.languages.lvb = e.target.value)">
+        <k-list-input
+          label="LVB"
+          type="select"
+          dropdown
+          disabled
+          @change="(e) => (select.languages.lvb = e.target.value)"
+        >
           <option
             v-for="choice in studentChoices.languages.lvb"
             :key="choice"
@@ -85,6 +99,7 @@ const select = reactive({
           :label="`OP${i}`"
           type="select"
           dropdown
+          disabled
           @change="(e) => (select.options[`op${i}`] = e.target.value)"
         >
           <option
@@ -98,14 +113,11 @@ const select = reactive({
         </k-list-input>
       </k-list>
 
-      <!--    <k-block-->
-      <!--      v-if="select.options.lvb !== account.options.lvb || select.options.lvc !== account.options.lvc"-->
-      <!--      class="-mt-4 flex flex-row gap-4"-->
-      <!--    >-->
-      <!--      <k-button class="h-12 w-20" @click="account.updateOptions(select.options)">-->
-      <!--        {{ $t("settings.save") }}-->
-      <!--      </k-button>-->
-      <!--    </k-block>-->
+      <k-block strong inset>
+        <p class="font-bold text-secondary">
+          {{ $t("settings.classes.warning") }}
+        </p>
+      </k-block>
     </ClientOnly>
   </div>
 </template>
