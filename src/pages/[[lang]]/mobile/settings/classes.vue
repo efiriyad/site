@@ -19,7 +19,7 @@ export default {
 
 <script setup lang="ts">
 definePageMeta({ layout: "mobile" });
-useHead({ title: "Settings - Classes" });
+useHead({ title: "Classes" });
 
 // Used to temporarily store the user's choices.
 const select = reactive({

@@ -19,7 +19,7 @@ const colorMode = useColorMode();
 const i18n = vueApp.config.globalProperties.$i18n;
 
 useHead({
-  title: "Default",
+  titleTemplate: "Efiriyad - %s",
   meta: [{ name: "theme-color", content: () => themeColors[colorMode.value] }],
   htmlAttrs: { lang: () => i18n.locale },
 });

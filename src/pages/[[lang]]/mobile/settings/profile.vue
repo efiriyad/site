@@ -19,7 +19,7 @@ export default {
 
 <script setup lang="ts">
 definePageMeta({ layout: "mobile" });
-useHead({ title: "Settings - Profile" });
+useHead({ title: "Profile" });
 
 // Fetch the profile picture.
 const account = useAccountStore();

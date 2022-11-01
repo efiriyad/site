@@ -33,7 +33,7 @@ if (account.token) {
 }
 
 useHead({
-  title: "Default",
+  titleTemplate: "Mobile - %s",
   meta: [{ name: "theme-color", content: () => themeColors[colorMode.value] }],
   htmlAttrs: { lang: () => i18n.locale },
 });

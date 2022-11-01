@@ -5,8 +5,8 @@ import { SiteSection } from "#components";
 import { animate as animateLogo } from "~/composables/animations/logo";
 import { animate as animateFeaturesBox } from "~/composables/animations/featuresBox";
 
-useHead({ title: "Home" });
 definePageMeta({ layout: "site" });
+useHead({ title: "Home" });
 
 const config = useRuntimeConfig();
 const github = config.public.github;

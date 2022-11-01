@@ -24,6 +24,7 @@ export default {
 
 <script setup lang="ts">
 definePageMeta({ layout: "phone" });
+useHead({ title: "Welcome" });
 
 const account = useAccountStore();
 const modules = [Pagination];
