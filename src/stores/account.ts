@@ -40,6 +40,16 @@ export const useAccountStore = defineStore("token", {
         body,
       });
     },
+
+    async uploadImage(formData) {
+      const { data: picture } = await useServerFetch("/client/picture", {
+        method: "POST",
+        initialCache: false,
+        body: formData,
+      });
+
+      return picture.value;
+    },
   },
 
   persist: {
@@ -54,7 +64,3 @@ export const useAccountStore = defineStore("token", {
     },
   },
 });
-
-// languages: { lva: "english_lva", lvb: "arabic_lvb" },
-// options: { op1: "", op2: "" },
-// specialties: { sp1: "math", sp2: "physics", sp3: "svt" },

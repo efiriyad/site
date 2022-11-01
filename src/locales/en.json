@@ -46,7 +46,9 @@
     "specialties": "Specialities",
     "languages": "Languages",
     "options": "Options",
-    "save": "Save"
+    "save": "Save",
+    "clear": "Cancel",
+    "name": "Your name"
   },
   "tabbar": {
     "efiriyad": "Efiriyad",
