@@ -43,12 +43,10 @@ useHead({
   <div class="relative mx-auto h-full min-h-screen md:max-w-md">
     <div class="absolute h-full w-full">
       <k-app theme="ios">
-        <k-page>
+        <k-page class="flex flex-col">
           <MobileNavBar class="fixed md:max-w-md" />
-          <div>
-            <div class="h-10"></div>
+          <div class="mt-10 h-full">
             <slot />
-            <div class="h-12"></div>
           </div>
           <MobileTabBar class="fixed bottom-0 md:max-w-md" />
         </k-page>

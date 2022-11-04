@@ -31,7 +31,7 @@ const select = reactive({
 </script>
 
 <template>
-  <div>
+  <div class="pb-12">
     <ClientOnly>
       <k-block-title>{{ $t("settings.specialties") }}</k-block-title>
       <k-list inset>

@@ -87,7 +87,7 @@ const onPushToggle = async () => {
 </script>
 
 <template>
-  <div>
+  <div class="pb-16">
     <ClientOnly>
       <k-block-title>{{ $t("settings.general") }}</k-block-title>
       <k-list inset>
