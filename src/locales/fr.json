@@ -34,7 +34,11 @@
       "title": "Notifications",
       "email": {
         "title": "Email",
-        "description": "Les e-mails sont la forme de communication la plus courante. Ils fonctionnent sur n'importe quel appareil, que ce soit votre téléphone, votre ordinateur ou même votre montre."
+        "description": "Les e-mails sont la forme de communication la plus facile à utiliser, que ce soit sur votre téléphone, votre ordinateur ou même sur votre montre."
+      },
+      "discord": {
+        "title": "Discord",
+        "description": "Discord est une platforme qui nous permet de vous contacter facilement. Rejoignez notre serveur afin de recevoir des notifications sur tous vos appareils."
       },
       "push": {
         "title": "Push",
@@ -48,7 +52,9 @@
     "options": "Options",
     "save": "Sauvegarder",
     "clear": "Annuler",
-    "name": "Ton nom"
+    "name": "Ton nom",
+    "email": "Ton email",
+    "emailValidation": "Veillez entrer une adresse email valide"
   },
   "tabbar": {
     "efiriyad": "Efiriyad",
@@ -59,8 +65,9 @@
     "classes": "Classes"
   },
   "navbar": {
+    "home": "Accueil",
     "demo": "Démo",
-    "support": "Support"
+    "support": "Aide"
   },
   "home": {
     "description": "Application de suivi scolaire pour les élèves de l'Efiriyad",

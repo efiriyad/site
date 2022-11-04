@@ -1,6 +1,6 @@
-<!--suppress JSUnusedGlobalSymbols, JSValidateTypes, JSUnresolvedVariable -->
+<!--suppress JSUnusedGlobalSymbols, JSValidateTypes, JSUnresolvedVariable, JSUndeclaredVariable -->
 <script lang="ts">
-import { LanguageIcon, MoonIcon, SunIcon, UserIcon, AcademicCapIcon } from "@heroicons/vue/24/outline";
+import { InboxIcon, LanguageIcon, MoonIcon, SunIcon, UserIcon, AcademicCapIcon } from "@heroicons/vue/24/outline";
 import { getToken } from "firebase/messaging";
 import {
   kBlockTitle,
@@ -8,6 +8,7 @@ import {
   kListInput,
   kListItem,
   kBlock,
+  kButton,
   kSegmented,
   kSegmentedButton,
   kBadge,
@@ -19,6 +20,7 @@ import { useLocaleStore } from "~/stores/client/locale";
 
 export default {
   components: {
+    InboxIcon,
     MoonIcon,
     SunIcon,
     UserIcon,
@@ -29,6 +31,7 @@ export default {
     kListInput,
     kListItem,
     kBlock,
+    kButton,
     kSegmented,
     kSegmentedButton,
     kBadge,
@@ -59,6 +62,7 @@ const config = useRuntimeConfig();
 
 // Fetch account data.
 const accountData = await account.fetchData();
+const selectEmail = ref(accountData.notifications.email.address); // Used to temporarily store the user's input.
 
 const onPushToggle = async () => {
   // Toggle and update the push notification status.
@@ -83,6 +87,21 @@ const onPushToggle = async () => {
       }
     });
   }
+};
+
+const testEmail = (email) => {
+  return /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email) || email === "";
+};
+
+const onEmailSave = async () => {
+  accountData.notifications.email.address = resolveUnref(selectEmail);
+  accountData.notifications.email.enabled = selectEmail !== "";
+
+  await account.updateData(accountData);
+};
+
+const onEmailClear = () => {
+  selectEmail.value = accountData.notifications.email.address;
 };
 </script>
 
@@ -133,7 +152,7 @@ const onPushToggle = async () => {
             <div>{{ $t("settings.notifications.email.title") }}</div>
           </k-segmented-button>
           <k-segmented-button strong :active="activeTab === 1" @click="activeTab = 1">
-            <div>Discord</div>
+            <div>{{ $t("settings.notifications.discord.title") }}</div>
           </k-segmented-button>
           <k-segmented-button strong :active="activeTab === 2" @click="activeTab = 2">
             <div class="flex space-x-1.5">
@@ -144,18 +163,58 @@ const onPushToggle = async () => {
         </k-segmented>
       </k-block>
       <div class="-mt-4">
-        <k-card v-if="activeTab === 0">
-          {{ $t("settings.notifications.email.description") }}
-        </k-card>
-        <k-card v-if="activeTab === 2">
-          <div>{{ $t("settings.notifications.push.description") }}</div>
-          <template #footer>
-            <div class="flex items-center gap-2">
-              <p class="grow text-lg">{{ $t("settings.notifications.push.subtitle") }}</p>
-              <k-toggle component="div" :checked="accountData.notifications.push.enabled" @click="onPushToggle" />
-            </div>
-          </template>
-        </k-card>
+        <div v-if="activeTab === 0">
+          <k-card>
+            {{ $t("settings.notifications.email.description") }}
+          </k-card>
+          <k-list inset class="mt-0">
+            <k-list-input
+              type="email"
+              :placeholder="$t('settings.email')"
+              :value="selectEmail"
+              :error="testEmail(selectEmail) ? '' : $t('settings.emailValidation')"
+              @input="(e) => (selectEmail = e.target.value)"
+            >
+              <template #media>
+                <InboxIcon class="h-5 w-5" />
+              </template>
+            </k-list-input>
+          </k-list>
+          <k-block
+            v-if="selectEmail !== accountData.notifications.email.address"
+            class="-mt-4 flex flex-row items-center gap-4"
+          >
+            <k-button class="h-8 w-auto px-3" :disabled="!testEmail(selectEmail)" @click="onEmailSave">
+              {{ $t("settings.save") }}
+            </k-button>
+            <k-button
+              :colors="{ bg: 'bg-secondary', activeBgDark: 'active:bg-secondary-dark' }"
+              class="h-8 w-auto px-3"
+              @click="onEmailClear"
+            >
+              {{ $t("settings.clear") }}
+            </k-button>
+          </k-block>
+        </div>
+        <div v-if="activeTab === 1">
+          <k-card>
+            <div>{{ $t("settings.notifications.discord.description") }}</div>
+          </k-card>
+          <k-block class="mt-0 h-64">
+            <MobileDiscordWidget />
+          </k-block>
+        </div>
+        <div v-if="activeTab === 2">
+          <k-card>
+            <div>{{ $t("settings.notifications.push.description") }}</div>
+            <template #footer>
+              <div class="flex items-center gap-2">
+                <p class="grow text-lg font-semibold">{{ $t("settings.notifications.push.subtitle") }}</p>
+                <k-toggle component="div" :checked="accountData.notifications.push.enabled" @click="onPushToggle" />
+              </div>
+            </template>
+          </k-card>
+        </div>
       </div>
     </ClientOnly>
   </div>

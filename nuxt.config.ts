@@ -69,6 +69,13 @@ export default defineNuxtConfig({
           date: { en: "August 5, 2022", fr: "5 Août, 2022" },
         },
       },
+
+      discord: {
+        invite: "https://discord.gg/ym4TVdvUw4",
+        widget: "https://discord.com/widget?id=1038068762487836752&theme=dark",
+      },
+
+      twitter: "https://twitter.com/menai_rami",
     },
   },
 });

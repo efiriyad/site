@@ -36,6 +36,10 @@
         "title": "Email",
         "description": "Emails are the most common form of communication. They work on any device, be it your phone, your computer or even your watch."
       },
+      "discord": {
+        "title": "Discord",
+        "description": "Discord is a communication platform that makes it easy to communicate with each other. Join pur discord server now and receive realtime notifications."
+      },
       "push": {
         "title": "Push",
         "subtitle": "Enable push notifications",
@@ -48,7 +52,9 @@
     "options": "Options",
     "save": "Save",
     "clear": "Cancel",
-    "name": "Your name"
+    "name": "Your name",
+    "email": "Your email",
+    "emailValidation": "Please enter a valid email"
   },
   "tabbar": {
     "efiriyad": "Efiriyad",
@@ -59,6 +65,7 @@
     "classes": "Classes"
   },
   "navbar": {
+    "home": "Home",
     "demo": "Demo",
     "support": "Support"
   },
