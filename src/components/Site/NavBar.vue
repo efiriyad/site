@@ -6,8 +6,8 @@ const config = useRuntimeConfig();
 const github = config.public.github;
 
 const navigation = [
-  { name: "navbar.demo", icon: DevicePhoneMobileIcon, href: "/mobile" },
-  { name: "navbar.support", icon: LifebuoyIcon, href: "/support" },
+  { name: "navbar.home", icon: LifebuoyIcon, href: "/" },
+  { name: "navbar.demo", icon: DevicePhoneMobileIcon, href: "/mobile/home" },
 ];
 </script>
 

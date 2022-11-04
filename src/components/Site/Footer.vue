@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { IconDiscord, IconGithub, IconTwitter } from "#components";
 
+const config = useRuntimeConfig();
 const socialMedias = [
-  { icon: IconTwitter, name: "twitter", href: "https://twitter.com/menai_rami" },
-  { icon: IconDiscord, name: "discord", href: "https://discord.gg/fkufJkJN" },
-  { icon: IconGithub, name: "github", href: "https://github.com/efiriyad/" },
+  { icon: IconTwitter, name: "twitter", href: config.public.twitter },
+  { icon: IconDiscord, name: "discord", href: config.public.discord.invite },
+  { icon: IconGithub, name: "github", href: `https://github.com/${config.public.github.owner}/` },
 ];
 </script>
 
