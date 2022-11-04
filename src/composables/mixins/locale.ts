@@ -17,7 +17,9 @@ export const localeMixin = {
           route = route.replace("/fr", "");
           break;
         case "fr":
-          route = "/fr" + route;
+          if (!route.startsWith("/fr")) {
+            route = "/fr" + route;
+          }
           break;
       }
 
