@@ -14,6 +14,11 @@ export default defineNuxtConfig({
         { rel: "icon", type: "image/png", sizes: "64x64", href: "/favicon-16x16.png" },
         { rel: "manifest", href: "/site.webmanifest" },
         { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#2563eb" },
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap",
+        },
       ],
       meta: [
         { name: "msapplication-TileColor", content: "#2563eb" },
@@ -24,7 +29,7 @@ export default defineNuxtConfig({
   },
 
   colorMode: { classSuffix: "", storageKey: "theme" },
-  tailwindcss: { cssPath: "~/assets/css/main.scss" },
+  css: ["~/assets/css/main.scss"],
 
   image: {
     dir: "public/images",

@@ -4,12 +4,14 @@ import { SiteSection } from "#components";
 
 import { animate as animateLogo } from "~/composables/animations/logo";
 import { animate as animateFeaturesBox } from "~/composables/animations/featuresBox";
+import { useAccountStore } from "~/stores/account";
 
 definePageMeta({ layout: "site" });
 useHead({ title: "Home" });
 
 const config = useRuntimeConfig();
 const github = config.public.github;
+const account = useAccountStore();
 
 const featuresBox = ref(null);
 
@@ -28,6 +30,13 @@ onMounted(() => {
     },
     { threshold: 0.5 }
   );
+
+  // Prefetch account data for later use.
+  if (account.token) {
+    setTimeout(async () => {
+      await account.fetchData();
+    });
+  }
 });
 </script>
 

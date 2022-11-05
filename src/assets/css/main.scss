@@ -1,15 +1,9 @@
-// Fonts.
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
-
-// Initialize Tailwindcss.
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 // Make icons thicker for better accessibility.
-@layer base {
-  svg {
-    stroke-width: 2;
-  }
+svg {
+  stroke-width: 2;
+}
+
+// Prevent alt text from showing on image load.
+img {
+  color: transparent;
 }
