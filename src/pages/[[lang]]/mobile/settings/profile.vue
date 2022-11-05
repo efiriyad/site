@@ -83,7 +83,7 @@ watch(files, () => {
         <template #media>
           <div class="mr-2 h-7 w-7 overflow-hidden rounded-full">
             <button @click="openFileDialog">
-              <img height="28" width="28" :src="select.pictureUrl" alt="Profile" />
+              <img :src="select.pictureUrl" alt="Profile" height="28" width="28" />
             </button>
           </div>
         </template>

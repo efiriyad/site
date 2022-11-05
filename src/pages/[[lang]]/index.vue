@@ -116,7 +116,7 @@ onMounted(() => {
       <template #description>{{ $t("notifications.description") }}</template>
       <template #content>
         <div class="w-[440px] sm:w-[540px] md:w-[740px]">
-          <nuxt-img loading="lazy" src="/notifications.svg" width="740" />
+          <nuxt-img loading="lazy" src="/notifications.svg" alt="Notifications graph" height="422" width="740" />
         </div>
       </template>
     </SiteSection>

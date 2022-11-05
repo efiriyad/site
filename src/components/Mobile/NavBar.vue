@@ -60,7 +60,7 @@ const data = await account.fetchData();
   <k-navbar :title="title ? $t(`tabbar.${title}`) : 'efiriyad'" :subtitle="subtitle ? $t(`tabbar.${subtitle}`) : ''">
     <template #right>
       <NuxtLink to="/mobile/settings/profile" class="mr-2 h-7 w-7 overflow-hidden rounded-full">
-        <img v-if="data" height="28" width="28" :src="data.profile.picture" alt="Profile" />
+        <img v-if="data" :src="data.profile.picture" alt="Profile" height="28" width="28" />
       </NuxtLink>
     </template>
     <template v-if="title !== 'efiriyad'" #left>

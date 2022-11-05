@@ -9,7 +9,7 @@ const config = useRuntimeConfig();
       style="font-family: ABC Ginto Normal, Helvetica Neue, Helvetica, Arial, sans-serif"
     >
       <div class="flex shrink-0 items-center bg-[#5865F2] p-5 text-white">
-        <nuxt-img src="/logos/discord.svg" width="124" height="34" />
+        <nuxt-img src="/logos/discord.svg" alt="Discord logo" height="34" width="124" />
         <span class="flex-1 text-right"><strong>Efiriyad app</strong></span>
       </div>
     </div>
