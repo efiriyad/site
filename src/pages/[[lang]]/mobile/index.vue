@@ -56,7 +56,7 @@ onMounted(() => {
     <div class="flex h-2/5 flex-col items-center justify-center gap-8 px-12 pt-8">
       <div class="flex h-40 w-40 items-center justify-center">
         <div class="h-14 w-14">
-          <nuxt-img src="/logos/efiriyad/text.svg" alt="Logo text" height="72" width="72" />
+          <nuxt-img src="/logos/efiriyad/inner.svg" alt="Logo text" height="72" width="72" />
         </div>
         <div class="animation-logo absolute mx-auto h-40 w-40">
           <nuxt-img src="/logos/efiriyad/outer.svg" alt="Logo outer" height="224" width="224" />

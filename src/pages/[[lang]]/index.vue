@@ -40,7 +40,7 @@ onMounted(() => {
         <div class="shrink-0">
           <div class="relative mx-auto flex h-40 w-40 items-center justify-center md:h-56 md:w-56 lg:ml-auto lg:mr-0">
             <div class="h-14 w-14 md:h-18 md:w-18">
-              <nuxt-img src="/logos/efiriyad/text.svg" alt="Logo text" height="72" width="72" />
+              <nuxt-img src="/logos/efiriyad/inner.svg" alt="Logo text" height="72" width="72" />
             </div>
             <div class="animation-logo absolute mx-auto h-40 w-40 md:h-56 md:w-56 lg:ml-auto lg:mr-0">
               <nuxt-img src="/logos/efiriyad/outer.svg" alt="Logo outer" height="224" width="224" />
