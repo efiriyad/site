@@ -23,6 +23,7 @@ export default defineNuxtConfig({
         },
       ],
       meta: [
+        { name: "description", content: "A revolutionary school tracking app for Efiriyad students." },
         { name: "msapplication-TileColor", content: "#2563eb" },
         { name: "theme-color", content: "#f7f7f8" },
       ],
