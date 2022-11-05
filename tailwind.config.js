@@ -11,6 +11,7 @@ module.exports = konstaConfig({
     "./src/App.{js,ts,vue}",
     "./src/app.{js,ts,vue}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {

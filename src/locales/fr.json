@@ -1,0 +1,88 @@
+{
+  "locale": {
+    "en": "Anglais",
+    "fr": "Français"
+  },
+  "theme": {
+    "system": "Système",
+    "light": "Clair",
+    "dark": "Foncé"
+  },
+  "lessons": {
+    "none": "Aucun",
+    "arabic": "Arabe",
+    "german": "Allemand",
+    "spanish": "Espagnol",
+    "sport_op": "Sport OP",
+    "art": "Art",
+    "math": "Mathématique",
+    "physics": "Physique-Chimie",
+    "svt": "SVT",
+    "ses": "SES",
+    "english": "Anglais",
+    "hggsp": "HGGSP",
+    "hlp": "HLP"
+  },
+  "settings": {
+    "general": "Général",
+    "appearance": "Apparence",
+    "profile": "Profile",
+    "classes": {
+      "warning": "Pour l'instant, vous ne pouvez pas modifier ces configurations car elles ne sont pas encore implémentées."
+    },
+    "notifications": {
+      "title": "Notifications",
+      "email": {
+        "title": "Email",
+        "description": "Les e-mails sont la forme de communication la plus facile à utiliser, que ce soit sur votre téléphone, votre ordinateur ou même sur votre montre."
+      },
+      "discord": {
+        "title": "Discord",
+        "description": "Discord est une platforme qui nous permet de vous contacter facilement. Rejoignez notre serveur afin de recevoir des notifications sur tous vos appareils."
+      },
+      "push": {
+        "title": "Push",
+        "subtitle": "Activer les notifications push",
+        "description": "Les notifications push vous permettent de rester à jour. Malheureusement, elles ne fonctionnent pas sur les téléphones IOS. (Prévu en 2023)"
+      }
+    },
+    "lessons": "Sélection des cours",
+    "specialties": "Spécialités",
+    "languages": "Langues",
+    "options": "Options",
+    "save": "Sauvegarder",
+    "clear": "Annuler",
+    "name": "Ton nom",
+    "email": "Ton email",
+    "emailValidation": "Veillez entrer une adresse email valide"
+  },
+  "tabbar": {
+    "efiriyad": "Efiriyad",
+    "home": "Accueil",
+    "features": "Fonctions",
+    "settings": "Paramètres",
+    "profile": "Profile",
+    "classes": "Classes"
+  },
+  "navbar": {
+    "home": "Accueil",
+    "demo": "Démo",
+    "support": "Aide"
+  },
+  "home": {
+    "description": "Application de suivi scolaire pour les élèves de l'Efiriyad",
+    "subtitle": "Avec support offline pour iOS et Android",
+    "button": "Commencer",
+    "link": "Obtenir de l'aide",
+    "version": "License MIT, {version} publié le {date}",
+    "copyright": "© Efiriyad, Inc. Tous droits réservés"
+  },
+  "features": {
+    "title": "Tout dans une app",
+    "description": "L'application Efiriyad est composée de toutes les fonctions de Pronote et Skolengo combinées. Vous trouverez tout ce que vous avez besoin pour gérer un cycle scolaire efficacement."
+  },
+  "notifications": {
+    "title": "Notifications en temps réel",
+    "description": "L'application Efiriyad est conçue pour supporter les notifications en temps réel. Nous vous informerons quand une nouvelle activité apparaît, comme par exemple une nouvelle note ou un nouveau devoir."
+  }
+}

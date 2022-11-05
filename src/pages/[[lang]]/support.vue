@@ -1,7 +1,6 @@
 <script setup lang="ts">
-useHead({
-  title: "Support",
-});
+definePageMeta({ layout: "site" });
+useHead({ title: "Support" });
 </script>
 
 <template>

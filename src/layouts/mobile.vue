@@ -1,29 +1,56 @@
 <script lang="ts">
 import { kApp, kPage } from "konsta/vue";
+import { localeMixin } from "~/composables/mixins/locale";
+import { themeColors } from "~/composables/constants";
+import { useAccountStore } from "~/stores/account";
 
 export default {
   components: {
     kApp,
     kPage,
   },
+  mixins: [localeMixin],
+  data() {
+    return {
+      themeColors,
+      useAccountStore,
+    };
+  },
 };
 </script>
 
-<template>
-  <k-app theme="ios">
-    <Head>
-      <Title>Mobile</Title>
-      <Link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <Link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <Link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <Link rel="manifest" href="/site.webmanifest" />
-      <Link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2563eb" />
-      <Meta name="msapplication-TileColor" content="#2563eb" />
-      <Meta name="theme-color" content="#ffffff" />
-    </Head>
+<script setup lang="ts">
+const { vueApp } = useNuxtApp();
 
-    <k-page>
-      <slot />
-    </k-page>
-  </k-app>
+const colorMode = useColorMode();
+const i18n = vueApp.config.globalProperties.$i18n;
+
+// Prefetch account data.
+const account = useAccountStore();
+
+if (account.token) {
+  await account.fetchData();
+}
+
+useHead({
+  titleTemplate: "Mobile - %s",
+  meta: [{ name: "theme-color", content: () => themeColors[colorMode.value] }],
+  htmlAttrs: { lang: () => i18n.locale },
+});
+</script>
+
+<template>
+  <div class="relative mx-auto h-full min-h-screen md:max-w-md">
+    <div class="absolute h-full w-full">
+      <k-app theme="ios">
+        <k-page class="flex flex-col">
+          <MobileNavBar class="fixed md:max-w-md" />
+          <div class="mt-10 h-full">
+            <slot />
+          </div>
+          <MobileTabBar class="fixed bottom-0 md:max-w-md" />
+        </k-page>
+      </k-app>
+    </div>
+  </div>
 </template>

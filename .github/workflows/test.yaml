@@ -25,12 +25,12 @@ jobs:
       - name: Install dependencies using yarn
         run: yarn --frozen-lockfile --prefer-offline
 
-      - name: Run linting
-        run: yarn lint
-
       # Required for e2e testing.
       - name: Build the project
         run: yarn build
+
+      - name: Run linting
+        run: yarn lint
 
       - name: Run unit and e2e tests
         run: |

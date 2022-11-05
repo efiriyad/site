@@ -1,31 +1,19 @@
+<!--suppress JSValidateTypes -->
 <script setup lang="ts">
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/vue/solid";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/vue/24/solid";
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/vue";
 
-import { animate as animateFeaturesBox } from "~/composables/animations/featuresBox";
-
+const features = [[], [], [], [], []];
 const colors = [
   { icon: "text-pronote-400", bg: ["bg-pronote-400", "bg-pronote-300", "bg-pronote-200", "bg-pronote-400"] },
   { icon: "text-skolengo-400", bg: ["bg-skolengo-100", "bg-skolengo-200", "bg-skolengo-300", "bg-skolengo-400"] },
 ];
 
-const features = [[], [], [], [], []];
-
-// Animation observers.
-const featuresBox = ref(null);
-const animationObserver = ref(null);
-
-// Tabs.
+// Tabs utilities.
 const selectedTab = ref(0);
 const changeTab = (index) => {
   selectedTab.value = index;
 };
-
-onMounted(() => {
-  animationObserver.value = onIntersect(featuresBox.value, 0.5, () => {
-    animateFeaturesBox();
-  });
-});
 
 defineProps({
   right: {

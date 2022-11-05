@@ -1,0 +1,88 @@
+{
+  "locale": {
+    "en": "English",
+    "fr": "French"
+  },
+  "theme": {
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "lessons": {
+    "none": "None",
+    "arabic": "Arabic",
+    "german": "German",
+    "spanish": "Spanish",
+    "sport_op": "Sport OP",
+    "art": "Art",
+    "math": "Mathematics",
+    "physics": "Physics",
+    "svt": "SVT",
+    "ses": "SES",
+    "english": "English",
+    "hggsp": "HGGSP",
+    "hlp": "HLP"
+  },
+  "settings": {
+    "general": "General",
+    "appearance": "Appearance",
+    "profile": "Profile",
+    "classes": {
+      "warning": "For now, you cannot edit these configurations as they are not yet implemented. This feature is under development."
+    },
+    "notifications": {
+      "title": "Notifications",
+      "email": {
+        "title": "Email",
+        "description": "Emails are the most common form of communication. They work on any device, be it your phone, your computer or even your watch."
+      },
+      "discord": {
+        "title": "Discord",
+        "description": "Discord is a communication platform that makes it easy to communicate with each other. Join pur discord server now and receive realtime notifications."
+      },
+      "push": {
+        "title": "Push",
+        "subtitle": "Enable push notifications",
+        "description": "Push notifications enable us to keep you up to date with everything that is happening. Sadly, push notifications do not work on IOS phones. (expected in 2023)"
+      }
+    },
+    "lessons": "Lessons selection",
+    "specialties": "Specialities",
+    "languages": "Languages",
+    "options": "Options",
+    "save": "Save",
+    "clear": "Cancel",
+    "name": "Your name",
+    "email": "Your email",
+    "emailValidation": "Please enter a valid email"
+  },
+  "tabbar": {
+    "efiriyad": "Efiriyad",
+    "home": "Home",
+    "features": "Features",
+    "settings": "Settings",
+    "profile": "Profile",
+    "classes": "Classes"
+  },
+  "navbar": {
+    "home": "Home",
+    "demo": "Demo",
+    "support": "Support"
+  },
+  "home": {
+    "description": "Revolutionary school tracking app for Efiriyad students",
+    "subtitle": "With iOS & Android offline app support",
+    "button": "Get started",
+    "link": "Find support",
+    "version": "MIT Licensed, {version} released on {date}",
+    "copyright": "© 2022 Efiriyad, Inc. All rights reserved"
+  },
+  "features": {
+    "title": "All in <span class='text-secondary'>one</span> place",
+    "description": "Efiriyad app comes with all the features of Pronote and Skolengo combined. You will find everything you need to lead a successfully school year, all in one app."
+  },
+  "notifications": {
+    "title": "Realtime notifications",
+    "description": "Efiriyad app is built to support realtime notifications. We will notify you when a new activity appears, such as a new grade or a new homework."
+  }
+}
