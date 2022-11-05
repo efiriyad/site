@@ -78,7 +78,7 @@ defineProps({
   </k-tabbar>
   <div
     v-else
-    class="relative flex h-full h-12.5 w-full w-full items-center justify-between overflow-hidden bg-bars-ios-light hairline-t pr-2-safe pl-2-safe translucent dark:bg-bars-ios-dark"
+    class="relative flex h-full h-12.5 w-full w-full items-center justify-between overflow-hidden bg-bars-ios-light hairline-t pr-2-safe pl-2-safe translucent"
   >
     <div
       v-for="tab in tabs"

@@ -37,7 +37,7 @@ useHead({
 
 <template>
   <div class="relative mx-auto h-full min-h-screen md:max-w-md">
-    <div class="absolute h-full w-full">
+    <div class="absolute h-full w-full text-black">
       <slot />
     </div>
   </div>
